@@ -14,8 +14,8 @@ class Blog
     @entries = []
   end
 
-  def new_post
-    post_source.call.tap do |post|
+  def new_post(*args)
+    post_source.call(*args).tap do |post|
       post.blog = self
     end
   end
